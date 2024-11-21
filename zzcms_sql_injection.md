@@ -1,3 +1,27 @@
+## Description of the vulnerability
+
+ZZCMS 2023 was discovered to contain a SQL injection vulnerability in /q/show.php
+
+## version
+
+2023 (fully open source)
+
+Last updated 2022-11-10
+
+## analyse
+
+In admin/dl_data_add.php,line:28, the contents of the xls file will be stored in the database, 
+
+<img src=".\img\3.png">
+
+ in q/show.php, line:32-34,39,154,the database contents will be retrieved and concatenated with an SQL statement for querying, leading to an injection.
+
+<img src=".\img\4.png">
+
+<img src=".\img\5.png">
+
+## Repetition
+
 1.First, log in to the admin account in the backend, and grant the account permission to import files.
 
 ```http
